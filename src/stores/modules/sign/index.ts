@@ -3,7 +3,7 @@ import {ref} from "vue";
 
 const sidebarOpen = ref<boolean>(true);
 
-const useStore = defineStore('signStore', {
+const loginStore = defineStore('signStore', {
     state: () => ({
             sidebarOpen: sidebarOpen,
             styleClass:''
@@ -28,4 +28,4 @@ const useStore = defineStore('signStore', {
     }
 })
 
-export default useStore;
+export default loginStore;

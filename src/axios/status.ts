@@ -15,7 +15,7 @@ export const showMessage = (status:number|string) : string => {
             message = "拒绝访问(403)";
             break;
         case 404:
-            message = "请求出错(404)";
+            message = "服务不存在(404)";
             break;
         case 408:
             message = "请求超时(408)";

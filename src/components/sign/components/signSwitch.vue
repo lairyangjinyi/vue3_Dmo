@@ -5,6 +5,7 @@ import {onMounted, reactive, ref} from "vue";
 const store = useStore();
 
 onMounted(()=>{
+    console.log('import.meta.env.BASE_URL',import.meta.env.BASE_URL)
     store.setSignIn();
 })
 const classShow = reactive({
@@ -50,7 +51,7 @@ const changeSign = (val) => {
             <button :disabled="disable" class="switch__button button switch-btn" @click="changeTo(true)">登录</button>
         </div>
         <div class="switch__container" id="switch-c2" :class="{'is-hidden':!classShow.is_hidden}">
-            <h2 class="switch__title title">Hello Friend !</h2>
+            <h2 class="switch__title title">你好!</h2>
             <p class="switch__description description">Enter your personal details and start journey with us</p>
             <button :disabled="disable" class="switch__button button switch-btn" @click="changeTo(false)">注册</button>
         </div>
