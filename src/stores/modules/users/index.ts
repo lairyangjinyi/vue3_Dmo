@@ -70,7 +70,7 @@ export const userStore = defineStore('user',
                 this.setToken('');
                 this.setUserInfo(undefined);
                 this.setRoleRouters([]);
-                router.replace('/loginIndex');
+                router.push('/loginIndex');
             },
             logout() {
                 this.reset()
