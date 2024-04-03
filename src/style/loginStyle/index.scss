@@ -1,15 +1,18 @@
-$bg: #EDF2F0;
+$bg: var(--loginView-bg-color);
+//$neu-1: var(--login-bg-color);
+$neu-2: var(--el-border-color-darker);
+$white: var(--light-color);
+$gray: var(--login-link-bg-color);
+$black: var(--black-color);
+$purple: var(--login-btn-color);
 
-$neu-1: #ecf0f3;
-$neu-2: #d1d9e6;
-
-$white: #f9f9f9;
-$gray: #a0a5a8;
-$black: #181818;
-
-$purple: #4B70E2;
-
-
+//$bg: var(--el-border-color-light);
+$neu-1: var(--el-bg-color-page);
+//$neu-2: var(--login-shadow-bg-color);
+//$white: var(--el-bg-color);
+//$gray: var(--el-color-info-light-5);
+//$black: var(--el-color-black);
+//$purple: var(--el-color-primary-light-5);
 $transition: 1.25s;
 
 *, *::after, *::before {
@@ -129,7 +132,6 @@ body{
   font-size: 34px;
   font-weight: 700;
   line-height: 3;
-  color: $black;
 }
 .description{
   font-size: 14px;
@@ -150,10 +152,17 @@ body{
   color: $white;
   box-shadow:
           8px 8px 16px $neu-2,
-          -8px -8px 16px $white;
+          -8px -8px 16px $neu-2;
 
   border: none;
   outline: none;
+  /*&:hover{
+    box-shadow:
+          6px 6px 10px $neu-2,
+          -6px -6px 10px $white;
+    transform: scale(.985);
+    transition: .25s;
+  }*/
 }
 /**/
 
@@ -227,7 +236,7 @@ body{
     &:hover{
       box-shadow:
               6px 6px 10px $neu-2,
-              -6px -6px 10px $white;
+              -6px -6px 10px $neu-2;
       transform: scale(.985);
       transition: .25s;
     }
@@ -268,4 +277,9 @@ body{
 @keyframes is-gx {
   0%, 10%, 100%{ width: 400px; }
   30%, 50%{ width: 500px;}
+}
+
+.form__input:deep(.el-input__wrapper){
+  background: none;
+  box-shadow: none;
 }

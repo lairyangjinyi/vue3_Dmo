@@ -15,11 +15,11 @@ const store = useStore();
                 <img class="form__icon" src=" ">
             </div>
             <span class="form__span">使用电子邮件进行注册</span>
-            <input class="form__input" type="text" placeholder="用户名">
-            <input class="form__input" type="text" placeholder="电子邮件地址">
-            <input class="form__input" type="password" placeholder="密码">
-            <input class="form__input" type="password" placeholder="确认密码">
-            <button class="form__button button submit">注册</button>
+            <el-input class="form__input" type="text" placeholder="用户名"/>
+            <el-input class="form__input" type="text" placeholder="电子邮件地址"/>
+            <el-input class="form__input" type="password" placeholder="密码"/>
+            <el-input class="form__input" type="password" placeholder="确认密码"/>
+            <el-button class="form__button button submit">注册</el-button>
         </form>
     </div>
 </template>

@@ -25,8 +25,8 @@ const login = () => {
                 <img class="form__icon" src=" ">
             </div>
             <span class="form__span"></span>
-            <input class="form__input" type="text" placeholder="用户名" v-model="loginFrom.username">
-            <input class="form__input" type="password" placeholder="密码" v-model.lazy="loginFrom.password">
+            <el-input class="form__input" type="text" placeholder="用户名" v-model="loginFrom.username"/>
+            <el-input class="form__input" type="password" placeholder="密码" v-model.lazy="loginFrom.password"/>
             <a class="form__link"></a>
             <el-button class="form__button button submit" @click="login">登录</el-button>
         </form>

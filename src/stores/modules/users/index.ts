@@ -66,7 +66,7 @@ export const userStore = defineStore('user',
                 this.loginInfo = loginInfo
             },
             reset() {
-                this.setLoginInfo('');
+                this.setLoginInfo(undefined);
                 this.setToken('');
                 this.setUserInfo(undefined);
                 this.setRoleRouters([]);

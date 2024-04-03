@@ -48,12 +48,12 @@ const changeSign = (val) => {
         <div class="switch__container" id="switch-c1" :class="{'is-hidden':classShow.is_hidden}">
             <h2 class="switch__title title">欢迎回来!</h2>
             <p class="switch__description description">To keep connected with us please login with your personal info</p>
-            <button :disabled="disable" class="switch__button button switch-btn" @click="changeTo(true)">登录</button>
+            <el-button type="primary" :disabled="disable" class="switch__button button switch-btn" @click="changeTo(true)">登录</el-button>
         </div>
         <div class="switch__container" id="switch-c2" :class="{'is-hidden':!classShow.is_hidden}">
             <h2 class="switch__title title">你好!</h2>
             <p class="switch__description description">Enter your personal details and start journey with us</p>
-            <button :disabled="disable" class="switch__button button switch-btn" @click="changeTo(false)">注册</button>
+            <el-button type="primary" :disabled="disable" class="switch__button button switch-btn" @click="changeTo(false)">注册</el-button>
         </div>
     </div>
 </template>

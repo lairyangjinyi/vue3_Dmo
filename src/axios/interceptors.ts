@@ -34,7 +34,7 @@ export default class CallBack{
     static Fail(error:any){
         if (error.response.status>200){
             ElMessage.error(showMessage(error.response.status));
-            if ([401, 403,404].includes(error.response.status)) {
+            if ([401, 403].includes(error.response.status)) {
                 router.push('/loginIndex');
             }
         }
