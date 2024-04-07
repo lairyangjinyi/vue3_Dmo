@@ -23,6 +23,6 @@ const toggleDark = useToggle(isDark);
     </div>
 </template>
 
-<style scoped >
-@import '@/style/loginStyle/loginStyle.scss';
+<style scoped lang="scss">
+@use "@/style/loginStyle/loginStyle.scss" as *;
 </style>

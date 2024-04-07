@@ -8,7 +8,12 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Components: typeof import('./src/components/sign/components/signSwitch.vue')['default']
+    ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElDropdown: typeof import('element-plus/es')['ElDropdown']
+    ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
+    ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElSwitch: typeof import('element-plus/es')['ElSwitch']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
@@ -16,6 +21,9 @@ declare module 'vue' {
     IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
+    IndexTopBar: typeof import('./src/components/topBar/indexTopBar.vue')['default']
+    LogoAndTitle: typeof import('./src/components/topBar/components/logoAndTitle.vue')['default']
+    PersonalCenter: typeof import('./src/components/topBar/components/personalCenter.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Sign: typeof import('./src/components/sign/index.vue')['default']
@@ -24,5 +32,6 @@ declare module 'vue' {
     SingIn: typeof import('./src/components/sign/components/singIn.vue')['default']
     SingUp: typeof import('./src/components/sign/components/singUp.vue')['default']
     Switch: typeof import('./src/components/sign/components/signSwitch.vue')['default']
+    ToolsBar: typeof import('./src/components/topBar/components/toolsBar.vue')['default']
   }
 }

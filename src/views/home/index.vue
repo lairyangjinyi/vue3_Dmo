@@ -3,6 +3,7 @@ import {onMounted} from "vue";
 import indexAxios from "@/axios";
 import router from "@/router";
 import { useToggle,useDark } from '@vueuse/core';
+import IndexTopBar from "@/components/topBar/indexTopBar.vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -22,6 +23,7 @@ const responesTest = ()=>{
 
 <template>
 <div>
+    <index-top-bar/>
     <a @click="responesTest">home</a>
     <h1 :style="{ color: isDark ? 'white' : 'black' }" color-scheme="dark" :class="{ 'dark': isDark }">Hello World</h1>
     <div>

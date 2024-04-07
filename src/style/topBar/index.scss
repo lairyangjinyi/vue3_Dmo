@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+:root {
+  --top-bar-background-color: #8b1010;
+  --top-bar-height: 60px;
+  --top-bar-height-full: 100%;
+}
+
+$WD: var(--top-bar-height);
+$HTF: var(--top-bar-height-full);
+
+@mixin border-left(){
+  border-left: 1px solid var(--el-color-info-light-7);
+}
+
+@mixin element-hover() {
+  &:hover {
+    cursor: pointer;
+    background-color: var(--el-color-primary-light-5);
+  }
+}
+
+@mixin WD-HT-40px() {
+  width: 40px;
+  height: 40px;
+}
+
+@mixin element-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar-container {
+  width: var(--top-bar-height-full);
+  height: var(--top-bar-height);
+  background-color: var(--white-color);
+  .top-bar {
+    height: var(--top-bar-height-full);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: var(--el-border-radius-round);
+    border-top-right-radius: var(--el-border-radius-round);
+    overflow: hidden;
+    background-color: var(--el-color-primary-light-3);
+  }
+}
+
+.topBarLogo {
+  cursor: pointer;
+  margin-left: 10px;
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .logoImage {
+    @include WD-HT-40px;
+  }
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--el-bg-color-overlay);
+    .titleText {
+      margin-right: 5px;
+    }
+    .titleEnglish {
+      font-size: 10px;
+      color: var(--el-bg-color-overlay);
+    }
+  }
+}
+
+.personal-center{
+  @include border-left;
+  height: $HTF;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include element-hover;
+  .el-dropdown-link {
+    width: 100px;
+    cursor: pointer;
+    color: var(--el-color-primary);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.tools-bar {
+  margin-left: auto;
+  height: $HTF;
+  .full-screen {
+    @include element-hover;
+    @include border-left;
+    @include element-center;
+    width: $WD;
+    height: $HTF;
+    .logoImage {
+      @include WD-HT-40px;
+    }
+  }
+}

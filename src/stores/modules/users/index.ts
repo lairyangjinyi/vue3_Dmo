@@ -79,4 +79,4 @@ export const userStore = defineStore('user',
         persist: true
     })
 
-export default userStore
+export default userStore;
