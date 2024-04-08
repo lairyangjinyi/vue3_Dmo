@@ -22,12 +22,12 @@ export default class CallBack{
     }
 
     static Before(config:InternalAxiosRequestConfig){
-        console.log('config',config)
+        // console.log('config',config);
             return config
     }
 
     static Success(config:AxiosResponse){
-        console.log(config);
+        // console.log(config);
         return config;
     };
 

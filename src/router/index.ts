@@ -10,6 +10,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/loginIndex',
     name: 'login',
+
     // @ts-ignore
     component: () => import('@/views/login/index.vue')
   },
@@ -18,6 +19,12 @@ const routes: Array<RouteRecordRaw> = [
     name: 'home',
     // @ts-ignore
     component: () => import('@/views/home/index.vue')
+  },
+  {
+    path: '/menuSettingIndex',
+    name: 'menuSetting',
+    // @ts-ignore
+    component: () => import('@/views/permissionsManagement/menu/index.vue')
   }
 ]
 

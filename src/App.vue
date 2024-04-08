@@ -3,6 +3,12 @@ import {  RouterView } from 'vue-router'
 </script>
 
 <template>
-  <router-view/>
+  <router-view class="router-view"/>
 </template>
+
+<style scoped lang="scss">
+.router-view {
+  height: 100%;
+}
+</style>
 

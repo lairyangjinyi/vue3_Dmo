@@ -4,6 +4,8 @@ import indexAxios from "@/axios";
 import router from "@/router";
 import { useToggle,useDark } from '@vueuse/core';
 import IndexTopBar from "@/components/topBar/indexTopBar.vue";
+import IndexSetting from "@/components/systemSettings/indexSetting.vue";
+import IndexMenu from "@/components/leftMenu/indexMenu.vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -14,39 +16,34 @@ onMounted(()=>{
 
 const responesTest = ()=>{
     indexAxios.get({url:'posts'}).then((response) => {
-        console.log(response)
+        // console.log(response)
     });
-    console.log(isDark)
+    console.log('isDark',isDark);
+    console.log('toggleDark',toggleDark);
+   const myStorage = localStorage;
+    console.log(myStorage)
     // router.push('/loginIndex');
 }
 </script>
 
 <template>
-<div>
-    <index-top-bar/>
-    <a @click="responesTest">home</a>
-    <h1 :style="{ color: isDark ? 'white' : 'black' }" color-scheme="dark" :class="{ 'dark': isDark }">Hello World</h1>
-    <div>
-        <p v-if="isDark">当前处于暗黑模式</p>
-        <p v-else>当前处于亮白模式</p>
-
-        <el-button @click="toggleDark()" type="primary">
-            <span class="ml-2">{{ isDark ? 'Dark' : 'Light' }}</span>
-        </el-button>
-        <el-switch
-            v-model="isDark"
-            inline-prompt
-            active-text="dark"
-            size="large"
-            inactive-text="light"
-            @change="toggleDark"
-        />
+    <div class="common-layout">
+        <el-container>
+            <el-header style="padding: 0px">
+                <index-top-bar/>
+            </el-header>
+            <el-container>
+                <el-aside width="200px">
+                    <index-menu/>
+                </el-aside>
+                <el-main>
+                    <index-setting/>
+                    <a @click="responesTest">home</a>
+                </el-main>
+            </el-container>
+        </el-container>
     </div>
-</div>
 </template>
 
 <style scoped lang="scss">
-html.dark {
-    background-color: #333333;
-}
 </style>
