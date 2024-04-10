@@ -1,6 +1,7 @@
 /*
 * @Author: yangli
 * @createDate: 2024/3/29 16:48
+* @description: 请求头的默认值或是常量
 */
 import type {AxiosContentType} from "./types";
 

@@ -1,4 +1,4 @@
 export interface loginInTypes{
-    username?:string,
+    userName?:string,
     password?:string,
 }

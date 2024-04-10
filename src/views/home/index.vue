@@ -1,3 +1,8 @@
+<!--
+* @Author: yangli
+* @createDate: 2024/4/3 17:52
+* @description: 首页
+-->
 <script setup lang="ts">
 import {onMounted} from "vue";
 import indexAxios from "@/axios";
@@ -39,6 +44,7 @@ const responesTest = ()=>{
                 <el-main>
                     <index-setting/>
                     <a @click="responesTest">home</a>
+                    <router-view/>
                 </el-main>
             </el-container>
         </el-container>

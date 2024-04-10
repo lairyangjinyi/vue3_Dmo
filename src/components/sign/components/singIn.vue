@@ -3,16 +3,32 @@ import {ref} from "vue";
 import type {loginInTypes} from "@/api/sign/types";
 import {useRoute,useRouter} from "vue-router";
 import useStore from "@/stores/modules/sign";
+import userStores from "@/stores/modules/users";
+import {signIn} from "@/api/sign";
+import {ElMessage} from "element-plus";
 
-const loginFrom = ref<loginInTypes>({username: "admin", password: "1q2w3E*"});
+const loginFrom = ref<loginInTypes>({userName: "admin", password: "1q2w3E*"});
 
 const store = useStore();
+const userStore = userStores();
 const router = useRouter();
 const route = useRoute();
 
-const login = () => {
-    router.push('/home')
-    console.log('denglu')
+const login = async () => {
+    const {userName, password} = loginFrom.value;
+    try {
+        const response = await signIn({userName:userName});
+        console.log(response);
+        if (response.status === 200 && response.data.length > 0){
+            userStore.userInfo = response.data[0];
+            router.push({path: '/home', replace:true});
+        }
+        else{
+            ElMessage.error('用户名或密码错误');
+        }
+    } catch (error) {
+        console.log(error)
+    }
 }
 </script>
 <template>
@@ -25,7 +41,7 @@ const login = () => {
                 <img class="form__icon" src=" ">
             </div>
             <span class="form__span"></span>
-            <el-input class="form__input" type="text" placeholder="用户名" v-model="loginFrom.username"/>
+            <el-input class="form__input" type="text" placeholder="用户名" v-model="loginFrom.userName"/>
             <el-input class="form__input" type="password" placeholder="密码" v-model.lazy="loginFrom.password"/>
             <a class="form__link"></a>
             <el-button class="form__button button submit" @click="login">登录</el-button>
@@ -34,5 +50,4 @@ const login = () => {
 </template>
 <style scoped>
 @import '@/style/loginStyle/index.scss';
-/* 将源码中的css样式单独存放,在各组件中导入就可以。*/
 </style>

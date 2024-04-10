@@ -8,7 +8,7 @@ export interface UserLoginType {
 }
 
 export interface UserType {
-    username: string
+    userName: string
     password: string
     role: string
     roleId: string

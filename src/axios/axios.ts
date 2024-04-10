@@ -1,6 +1,7 @@
 /*
 * @Author: yangli
 * @createDate: 2024/4/1 16:32
+* @description: 请求封装主入口与拦截器
 */
 import axios from "axios";
 import type {AxiosConfig} from "@/axios/types";

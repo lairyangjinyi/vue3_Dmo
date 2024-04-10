@@ -1,6 +1,7 @@
 /*
 * @Author: yangli
 * @createDate: 2024/3/29 15:07
+* @description: 请求配置类型
 */
 import type { RawAxiosRequestHeaders } from 'axios'
 

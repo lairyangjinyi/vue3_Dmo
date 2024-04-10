@@ -1,6 +1,7 @@
 /*
 * @Author: yangli
 * @createDate: 2024/3/29 16:25
+* @description: 处理axios请求状态码
 */
 export const showMessage = (status:number|string) : string => {
     let message:string = "";

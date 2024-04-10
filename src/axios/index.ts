@@ -1,6 +1,7 @@
 /*
  * @Author: yangli
  * @Date: 2024/15/29 15:29:33
+ * @description: 二次封装的axios库请求方法
 */
 import type {AxiosConfig} from "@/axios/types";
 import {request} from "./axios";

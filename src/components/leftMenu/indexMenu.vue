@@ -7,6 +7,11 @@ import { ref } from 'vue';
 import router from '@/router';
 
 const isCollapse = ref(true);
+
+const handleSelect = (value: string) => {
+    router.push('/'+value);
+    console.log(value)
+}
 const handleOpen = (key: string, keyPath: string[]) => {
     console.log(key, keyPath);
 }
@@ -21,6 +26,7 @@ const handleClose = (key: string, keyPath: string[]) => {
                 default-active="2"
                 class="elMenu"
                 :collapse="false"
+                @select="handleSelect"
                 @open="handleOpen"
                 @close="handleClose">
                 <el-scrollbar class="el-scrollbar">
@@ -68,8 +74,8 @@ const handleClose = (key: string, keyPath: string[]) => {
                             </el-icon>
                             <span>权限管理</span>
                         </template>
-                            <el-menu-item index="1-1">菜单管理</el-menu-item>
-                            <el-menu-item index="1-1">角色管理</el-menu-item>
+                            <el-menu-item index="menuManagement">菜单管理</el-menu-item>
+                            <el-menu-item index="roleManagement">角色管理</el-menu-item>
                     </el-sub-menu>
                     </el-scrollbar>
             </el-menu>

@@ -1,6 +1,7 @@
 /*
 * @Author: yangli
 * @createDate: 2024/4/1 19:43
+* @description: 请求拦截器的实现
 */
 // 添加响应拦截器
 import type {AxiosResponse, InternalAxiosRequestConfig} from "axios";

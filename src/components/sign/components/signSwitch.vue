@@ -1,3 +1,8 @@
+<!--
+* @Author: yangli
+* @createDate: 2024/4/3 17:52
+* @description: 切换登录注册
+-->
 <script setup lang="ts">
 import useStore from "@/stores/modules/sign";
 import {onMounted, reactive, ref} from "vue";

@@ -1,6 +1,7 @@
 <!--
 * @Author: yangli
 * @createDate: 2024/4/3 17:52
+* @description: 个人中心
 -->
 <script setup lang="ts">
 import { toRefs, reactive } from 'vue';
@@ -12,7 +13,7 @@ const userStores = userStore();
 const handleCommand = (command: string) => {
     console.log(command);
   if (command === '个人中心') {
-      console.log(userStores.$state);
+      console.log(userStores.userInfo);
     // TODO: 跳转到个人中心页面
   } else if (command === '退出系统') {
       userStores.logout();
@@ -35,7 +36,7 @@ const { circleUrl, squareUrl, sizeList } = toRefs(state);
       <div class="personal-center-icon">
           <el-avatar :size="50" :src="state.circleUrl" />
       </div>
-      <span>{{ userStores.$state.userInfo?.username }}</span>
+      <span style="color: var(--white-color);">{{ userStores.$state.userInfo?.userName }}</span>
     </span>
         <template #dropdown>
             <el-dropdown-menu>

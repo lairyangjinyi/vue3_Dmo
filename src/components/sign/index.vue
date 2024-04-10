@@ -1,4 +1,8 @@
-<!--Component name "index" should always be multi-word.(vue/multi-word-component-names)-->
+<!--
+* @Author: yangli
+* @createDate: 2024/4/3 17:52
+* @description: 登录注册组件界面
+-->
 <script setup lang="ts">
 import signUp from '@/components/sign/components/singUp.vue';
 import signIn from '@/components/sign/components/singIn.vue';

@@ -85,6 +85,9 @@ $HTF: var(--top-bar-height-full);
     color: var(--el-color-primary);
     display: flex;
     align-items: center;
+    span {
+      margin-left: 5px;
+    }
   }
 }
 

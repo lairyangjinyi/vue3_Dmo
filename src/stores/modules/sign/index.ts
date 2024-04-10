@@ -1,3 +1,8 @@
+/*
+* @Author: yangli
+* @createDate: 2024/3/29 16:29
+* @description: 登录的store
+*/
 import { defineStore } from 'pinia'
 import {ref} from "vue";
 
