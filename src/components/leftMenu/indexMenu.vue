@@ -30,7 +30,15 @@ const handleClose = (key: string, keyPath: string[]) => {
                 @open="handleOpen"
                 @close="handleClose">
                 <el-scrollbar class="el-scrollbar">
-                    <el-sub-menu index="1">
+
+                    <el-menu-item index="homepage">
+                        <el-icon>
+                            <document/>
+                        </el-icon>
+                        <template #title>首页</template>
+                    </el-menu-item>
+
+                    <el-sub-menu index="2">
                         <template #title>
                             <el-icon>
                                 <location/>
@@ -53,18 +61,7 @@ const handleClose = (key: string, keyPath: string[]) => {
                         </el-sub-menu>
                     </el-sub-menu>
 
-                    <el-menu-item index="2">
-                        <template #title>Navigator Two</template>
-                    </el-menu-item>
-
-                    <el-menu-item index="3">
-                        <el-icon>
-                            <document/>
-                        </el-icon>
-                        <template #title>Navigator Three</template>
-                    </el-menu-item>
-
-                    <el-sub-menu index="4">
+                    <el-sub-menu index="3">
                         <template #title>
                             <el-icon>
                                 <setting/>

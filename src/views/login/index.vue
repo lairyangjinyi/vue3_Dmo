@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import signLayout from '@/components/sign/index.vue';
-
-import { useToggle,useDark } from '@vueuse/core'
+import { useToggle,useDark } from '@vueuse/core';
+import dark from '@/assets/icon/dark.svg';
+import light from '@/assets/icon/light.svg';
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
@@ -11,9 +12,9 @@ const toggleDark = useToggle(isDark);
         <el-switch
             v-model="isDark"
             inline-prompt
-            active-text="dark"
+            active-icon="dark"
+            inactive-icon="light"
             size="large"
-            inactive-text="light"
             @change="toggleDark"
             class="switchDisPlay"
         />

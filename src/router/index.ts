@@ -38,6 +38,23 @@ const routes: Array<RouteRecordRaw> = [
     ]
   },
   {
+    path: '/home',
+    name: 'home',
+    component: homeLayout,
+    children: [
+      {
+        path: '/homepage',
+        name: 'homepage',
+        // @ts-ignore
+        component: () => import('@/views/home/components/homePage.vue'),
+        meta: {
+          requireAuth: true, // 需要用户权限
+          roles: ['admin', 'guest'] // 受访问限制的角色
+        }
+      }
+    ]
+  },
+  {
     path: '/permissionsManagement',
     name: 'permissionsManagement',
     component: homeLayout,
