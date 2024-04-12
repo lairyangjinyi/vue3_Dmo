@@ -15,6 +15,7 @@ interface UserState {
     loginInfo?: UserLoginType
 }
 
+// @ts-ignore
 export const userStore = defineStore('user',
     {
         state: (): UserState => ({
@@ -66,13 +67,18 @@ export const userStore = defineStore('user',
                 this.loginInfo = loginInfo
             },
             reset() {
+                // @ts-ignore
                 this.setLoginInfo(undefined);
+                // @ts-ignore
                 this.setToken('');
+                // @ts-ignore
                 this.setUserInfo(undefined);
+                // @ts-ignore
                 this.setRoleRouters([]);
-                router.push('/loginIndex');
+                router.push('/login');
             },
             logout() {
+                // @ts-ignore
                 this.reset()
             },
         },

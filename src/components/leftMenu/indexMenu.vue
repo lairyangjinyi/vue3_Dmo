@@ -54,9 +54,6 @@ const handleClose = (key: string, keyPath: string[]) => {
                     </el-sub-menu>
 
                     <el-menu-item index="2">
-                        <el-icon>
-                            <icon-menu/>
-                        </el-icon>
                         <template #title>Navigator Two</template>
                     </el-menu-item>
 

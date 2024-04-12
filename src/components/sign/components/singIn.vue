@@ -19,9 +19,15 @@ const login = async () => {
     try {
         const response = await signIn({userName:userName});
         console.log(response);
+        sessionStorage.setItem("userInfo", JSON.stringify(response.data[0]));
         if (response.status === 200 && response.data.length > 0){
-            userStore.userInfo = response.data[0];
             router.push({path: '/home', replace:true});
+            // 从 sessionStorage 获取数据
+            const data = JSON.parse(sessionStorage.getItem("userInfo") || 'null');
+            if (data){
+                userStore.setUserInfo(data);
+            }
+            console.log(data);
         }
         else{
             ElMessage.error('用户名或密码错误');

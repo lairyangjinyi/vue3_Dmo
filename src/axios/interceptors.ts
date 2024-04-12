@@ -36,7 +36,7 @@ export default class CallBack{
         if (error.response.status>200){
             ElMessage.error(showMessage(error.response.status));
             if ([401, 403].includes(error.response.status)) {
-                router.push('/loginIndex');
+                router.push('/login');
             }
         }
         return Promise.reject(error);

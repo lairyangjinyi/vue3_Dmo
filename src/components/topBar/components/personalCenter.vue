@@ -4,22 +4,33 @@
 * @description: 个人中心
 -->
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import { toRefs, reactive } from 'vue';
 import {userStore} from '@/stores/modules/users';
 import emptyAvatar from '@/assets/images/emptyAvatar.png';
 import "@/style/topBar/index.scss";
+import {signIn} from "@/api/sign";
+import {ElMessage} from "element-plus";
 
 const userStores = userStore();
+
+onMounted(() => {
+    if(sessionStorage.getItem('userInfo')){
+        userStores.userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+    }
+    console.log(userStores)
+});
+
 const handleCommand = (command: string) => {
-    console.log(command);
-  if (command === '个人中心') {
-      console.log(userStores.userInfo);
-    // TODO: 跳转到个人中心页面
-  } else if (command === '退出系统') {
-      userStores.logout();
-    // TODO: 退出系统
-  }
+    if (command === '个人中心') {
+        console.log(userStores.userInfo);
+        // TODO: 跳转到个人中心页面
+    } else if (command === '退出系统') {
+        userStores.logout();
+        // TODO: 退出系统
+    }
 }
+
 
 const state = reactive({
     circleUrl:emptyAvatar,
