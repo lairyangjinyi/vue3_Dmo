@@ -6,7 +6,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import  usePermission  from '@/hooks/web/usePermission';
+import  usePermission  from '@/hooks/permission/usePermission';
 import {ElMessage} from "element-plus";
 
 const isShow = defineModel({required: true, default: false})

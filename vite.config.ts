@@ -15,7 +15,6 @@ const getViteEnv = (mode, target) => {
   return loadEnv(mode, process.cwd())[target];
 }
 
-// https://vitejs.dev/config/
 // @ts-ignore
 export default  ({ mode }) => defineConfig({
   plugins: [
@@ -38,6 +37,18 @@ export default  ({ mode }) => defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
+  server: {
+    port: parseInt(getViteEnv(mode, 'VITE_PORT')),// 本地开发环境下，可指定端口
+    open: true,
+    proxy: {
+      '/api': {
+        target: getViteEnv(mode, 'VITE_PROXY_URL'),//本地开发环境 代理地址
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    },
+    host: getViteEnv(mode, 'VITE_HOST')// 本地开发环境下，可指定host
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
